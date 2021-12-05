@@ -18,11 +18,18 @@ function addTodo( Event ){
     // todo div
     const todoDiv = document.createElement("div");
     todoDiv.classList.add("todo");
+    if(todoInput.value===""){
+        return alert (" Please enter a task! ");
+    }
+    
+    
     // Create li
     const newTodo = document.createElement('li');
     newTodo.innerText = todoInput.value;
     newTodo.classList.add('todo-item');
     todoDiv.appendChild(newTodo);
+ 
+
     // Check Mark Button
     const completedButton = document.createElement('button');
     completedButton.innerHTML = "<i class='fas fa-check'></i>";
@@ -37,7 +44,9 @@ function addTodo( Event ){
     todoList.appendChild(todoDiv);
     // clear to do input value
     todoInput.value = " ";
+  
 }
+
 
 function deleteCheck (e) {
     const item = e.target;
